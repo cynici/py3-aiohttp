@@ -18,7 +18,7 @@ RUN pip3 install asyncpg \
  && pip3 install rethinkdb \
  && pip3 install dateutils \
  && pip3 install pytest \
- && pip3 install raven --upgrade \
+ && pip3 install blinker raven --upgrade \
  && apt-get update \
  && apt-get -y install curl python3-shapely python3-jinja2 python3-yaml \
  && curl -o gosu -fsSL "$GOSU_DOWNLOAD_URL" > gosu-amd64 \
@@ -27,3 +27,5 @@ RUN pip3 install asyncpg \
  && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ADD docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod 755 /docker-entrypoint.sh \
+ && chown root.root /docker-entrypoint.sh
