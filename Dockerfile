@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:3.6
 
 ARG GOSU_VERSION=1.10
 ARG GOSU_DOWNLOAD_URL="https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-amd64"
