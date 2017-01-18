@@ -19,4 +19,9 @@ Beware of the version of Python 3 interpreter you use and set your PYTHONPATH ac
 
 - `/usr/bin/python3` is version 3.4+
 - `/usr/local/bin/python3` is version 3.5+
+- Just before importing packages installed using `apt-get`, e.g. `yaml`, `shapely`, etc. do this in your code,
+
+```
+sys.path.append('/usr/lib/python3/dist-packages')
+```
 
