@@ -18,6 +18,7 @@ RUN pip3 install asyncpg \
  && pip3 install rethinkdb \
  && pip3 install dateutils \
  && pip3 install pytest \
+ && pip3 install numpy \
  && pip3 install blinker raven raven_aiohttp --upgrade \
  && apt-get update \
  && apt-get -y install curl python3-shapely python3-jinja2 python3-yaml \
