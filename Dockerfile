@@ -1,8 +1,10 @@
 FROM python:3.6
+LABEL maintainer "Cheewai Lai <clai@csir.co.za>"
 
 ARG GOSU_VERSION=1.10
 ARG GOSU_DOWNLOAD_URL="https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-amd64"
 ARG DEBIAN_FRONTEND=noninteractive
+ARG DOCKERIZE_VERSION=v0.5.0
 
 RUN pip3 install asyncpg \
  && pip3 install async-timeout \
@@ -24,6 +26,7 @@ RUN pip3 install asyncpg \
  && curl -o gosu -fsSL "$GOSU_DOWNLOAD_URL" > gosu-amd64 \
  && mv gosu /usr/bin/gosu \
  && chmod +x /usr/bin/gosu \
+ && curl -k -fsSL https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz | tar xfz - -C /usr/bin \
  && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ADD docker-entrypoint.sh /docker-entrypoint.sh
