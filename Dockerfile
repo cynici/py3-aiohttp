@@ -23,7 +23,7 @@ RUN pip3 install asyncpg \
  && pip3 install numpy \
  && pip3 install blinker raven raven_aiohttp --upgrade \
  && apt-get update \
- && apt-get -y install curl python3-shapely python3-jinja2 python3-yaml \
+ && apt-get -y install curl python3-shapely python3-jinja2 python3-yaml python3-requests \
  && curl -o gosu -fsSL "$GOSU_DOWNLOAD_URL" > gosu-amd64 \
  && mv gosu /usr/bin/gosu \
  && chmod +x /usr/bin/gosu \
