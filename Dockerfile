@@ -10,7 +10,7 @@ ARG DOCKERIZE_VERSION=v0.5.0
 RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >>/etc/apk/repositories \
  && apk update \
  && apk add --upgrade apk-tools \
- && apk add curl python3 py3-yaml py3-jinja2 py3-aiohttp-jinja2@testing py3-numpy py3-psycopg2 geos@testing geos-dev@testing \
+ && apk add curl python3 py3-yaml py3-jinja2 py3-aiohttp-jinja2@testing py3-numpy py3-psycopg2 py3-requests geos@testing geos-dev@testing \
  && ln -s /usr/bin/python3 /usr/bin/python \
  && apk add --virtual build-dependencies python3-dev py3-setuptools build-base \
  && pip3 install --upgrade pip \
